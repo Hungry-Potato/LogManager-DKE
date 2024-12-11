@@ -205,4 +205,6 @@ build/
 .gradle/
 .idea/
 
+.env.properties
+
 

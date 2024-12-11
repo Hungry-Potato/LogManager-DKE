@@ -1,19 +1,22 @@
 package com.hungry.logServer.Alert;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-@Bean
-public class DiscordAlerter {
-    private final RestTemplate restTemplate;
+import java.util.HashMap;
+import java.util.Map;
 
-    public DiscordAlerter(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+@Service
+public class DiscordAlerter {
+    private final RestTemplate restTemplate = new RestTemplate();
+    @Value("${discord.webhook.url}")
+    private String discordWebhookUrl;
 
     public void sendDiscordAlert(String message) {
         Map<String, String> payload = new HashMap<>();
-        payload.put("content", content);
+        payload.put("content", message);
 
         try {
             restTemplate.postForEntity(discordWebhookUrl, payload, String.class);
