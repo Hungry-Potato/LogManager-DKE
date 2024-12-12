@@ -14,7 +14,12 @@
 - pipeline.id: sudo-pipeline
   path.config: "/etc/logstash/conf.d/sudo-pipeline.conf"
 
-# 폐기
+- pipeline.id: audit-sudo-pipeline
+  path.config: "/etc/logstash/conf.d/audit-sudo-pipeline.conf"
+
+- pipeline.id: audit-login-pipeline
+  path.config: "/etc/logstash/conf.d/audit-login-pipeline.conf"
+
+#폐기
 #- pipeline.id: login-pipeline
 #  path.config: "/etc/logstash/conf.d/login-pipeline.conf"
-
