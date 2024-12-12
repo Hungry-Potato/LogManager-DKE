@@ -207,4 +207,5 @@ build/
 
 .env.properties
 
-
+docker-compose.yml
+./bin/

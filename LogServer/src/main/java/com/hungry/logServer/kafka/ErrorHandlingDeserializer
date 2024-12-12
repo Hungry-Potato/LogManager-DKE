@@ -1,0 +1,32 @@
+package com.hungry.logServer.kafka
+
+public class ErrorHandlingDeserializer<T> implements Deserializer<T> {
+
+    private final Deserializer<T> innerDeserializer;
+
+    public ErrorHandlingDeserializer(Deserializer<T> innerDeserializer) {
+        this.innerDeserializer = innerDeserializer;
+    }
+
+    @Override
+    public void configure(Map<String, ?> configs, boolean isKey) {
+        innerDeserializer.configure(configs, isKey);
+    }
+
+    @Override
+    public T deserialize(String topic, byte[] data) {
+        try {
+            return innerDeserializer.deserialize(topic, data);
+        } catch (Exception e) {
+            System.err.println("Error deserializing message from topic: " + topic);
+            e.printStackTrace();
+            // 로그 기록 또는 기본값 반환
+            return null;
+        }
+    }
+
+    @Override
+    public void close() {
+        innerDeserializer.close();
+    }
+}
