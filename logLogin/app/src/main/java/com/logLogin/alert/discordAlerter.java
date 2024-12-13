@@ -5,7 +5,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class discordAlerter {
-    private static final String WEBHOOK_URL = "https://discord.com/api/webhooks/1317129445106122802/9oI6cKwao-Nk8uHaKFDGtvQHGJSi3okg-d1AJcH-ZwADTx2leM7taVWa25dtj5szS9Sa";  // 디스코드 웹훅 URL을 입력하세요
+    private static final String WEBHOOK_URL = "";
 
     public static void sendDiscordMessage(String message) {
         try {
