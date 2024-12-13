@@ -27,6 +27,7 @@ public class CommandLog {
     private String ses;
     private String hostname;
     private String user;
+    private String sourceIp;
 
     @Override
     public String toString() {
@@ -55,7 +56,7 @@ public class CommandLog {
         this.timestamp = kstDateTime.format(formatter);
     }
 
-    public String toDiscordMessage() {
+    private String toDiscordMessageTty() {
         StringBuilder message = new StringBuilder();
         message.append("```") // 코드 블록 시작
                 .append("📋 Command Log\n")
@@ -70,5 +71,29 @@ public class CommandLog {
                 .append("```"); // 코드 블록 끝
 
         return message.toString();
+    }
+
+    private String toDiscordMessageIp() {
+        StringBuilder message = new StringBuilder();
+        message.append("```") // 코드 블록 시작
+                .append("📋 Command Log\n")
+                .append("🕒 Timestamp       : ").append(timestamp).append("\n")
+                .append("👤 User            : ").append(user).append(" (").append(userPermission).append(")\n")
+                .append("💻 Hostname        : ").append(hostname).append(" (").append(ip).append(")\n")
+                .append("📂 Working Dir     : ").append(pwd).append("\n")
+                .append("📜 Command         : ").append(command).append("\n")
+                .append("🌐 IP Address      : ").append(sourceIp).append("\n")
+                //.append("🌐 IP Addresses    : ").append(ip != null ? String.join(", ", ip) : "N/A").append("\n")
+                .append("🆔 Session ID      : ").append(ses).append("\n")
+                .append("```"); // 코드 블록 끝
+
+        return message.toString();
+    }
+
+    public String toDiscordMessage() {
+        if (this.sourceIp != null){
+            return toDiscordMessageIp();
+        }
+        return toDiscordMessageTty();
     }
 }
