@@ -1,10 +1,8 @@
 package com.logLogin.kafka;
 import com.logLogin.model.parseMsg;
 import com.logLogin.alert.discordAlerter;
-//import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.kafka.annotation.KafkaListener;
-//import org.springframework.stereotype.Service;
 import org.springframework.stereotype.Component;
 
 @Component

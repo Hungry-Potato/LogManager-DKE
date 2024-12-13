@@ -28,10 +28,28 @@ public class parseMsg {
            ", timestamp=" + timestamp + "]";
     }
     public String discordMsg(){
-        if(result.equals("success"))
-            return "[SUCCESS] User '" + loginId + "' connected from " + sourceIp + " to " + hostname + "(" + ip + ").";
-        else
-            return "[FAIL] User '" + loginId + "' failed to connect from " + sourceIp + " to " + hostname + "(" + ip + ").";
+        StringBuilder message = new StringBuilder();
+
+        if(result.equals("success")){
+            
+            message.append("```ansi\\n")
+                .append("[\\u001B[1;36mSUCCESS\\u001B[0m] '").append("\\u001B[1m")
+                .append(loginId).append("\\u001B[0m' connected from \\u001B[4;34m")
+                .append(sourceIp).append("\\u001B[0m to \\u001B[1m").append(hostname).append("\\u001B[0m(").append(ip).append(").\\n")
+                .append("```");
+
+            return message.toString();
+            
+        }
+        else{
+            message.append("```ansi\\n")
+                .append("[\\u001B[1;31mFAILED\\u001B[0m] '").append("\\u001B[1m")
+                .append(loginId).append("\\u001B[0m' failed to connected from \\u001B[4;34m")
+                .append(sourceIp).append("\\u001B[0m to \\u001B[1m").append(hostname).append("\\u001B[0m(").append(ip).append(").\\n")
+                .append("```");
+
+            return message.toString();
+        }
     }
 
 }
