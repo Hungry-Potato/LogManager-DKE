@@ -1,2 +1,1 @@
-# Ignore all .jar files globally
-*.jar
+/app/build/libs/*.jar
