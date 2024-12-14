@@ -44,7 +44,7 @@ public class parseMsg {
         else{
             message.append("```ansi\\n")
                 .append("[\\u001B[1;31mFAILED\\u001B[0m] '").append("\\u001B[1m")
-                .append(loginId).append("\\u001B[0m' failed to connected from \\u001B[4;34m")
+                .append(loginId).append("\\u001B[0m' failed to connect from \\u001B[4;34m")
                 .append(sourceIp).append("\\u001B[0m to \\u001B[1m").append(hostname).append("\\u001B[0m(").append(ip).append(").\\n")
                 .append("```");
 
