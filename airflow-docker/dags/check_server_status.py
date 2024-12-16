@@ -64,8 +64,8 @@ default_args = {
 dag = DAG(
     'check_server_status',
     default_args=default_args,
-    description='매분 서버 확인후 다운 됐을 시, Discord로 알람',
-    schedule_interval=timedelta(minutes=1),
+    description='5분 마다 서버 확인후 다운 됐을 시, Discord로 알람',
+    schedule_interval=timedelta(minutes=5),
     catchup=False,
 )
 
