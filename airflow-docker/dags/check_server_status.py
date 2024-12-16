@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 
 # Discord Webhook URL
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1318171885707726871/WGe9kOuzQqRjkzIFQ09UCnbw5NLvDWexYli3uxZypJBZwtX6aSliRba02h3fW1i1B7Q1"
+DISCORD_WEBHOOK_URL = ""
 
 def alert_to_discord(name, ip, port):
     message = f"```ansi\n{u'\u001B'}[1;36;40m{name}{u'\u001B'}[0m{u'\u001B'}[40m({ip}:{port})가 꺼져있습니다.{u'\u001B'}[0m```"
