@@ -1,0 +1,65 @@
+[2024-12-16T10:10:02.432+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-16T10:10:02.447+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: check_server_status.check_server_status scheduled__2024-12-16T10:09:00+00:00 [queued]>
+[2024-12-16T10:10:02.454+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: check_server_status.check_server_status scheduled__2024-12-16T10:09:00+00:00 [queued]>
+[2024-12-16T10:10:02.454+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-16T10:10:02.466+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): check_server_status> on 2024-12-16 10:09:00+00:00
+[2024-12-16T10:10:02.473+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=241) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-16T10:10:02.474+0000] {standard_task_runner.py:72} INFO - Started process 243 to run task
+[2024-12-16T10:10:02.475+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'check_server_status', 'check_server_status', 'scheduled__2024-12-16T10:09:00+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/check_server_status.py', '--cfg-path', '/tmp/tmpj2am7nui']
+[2024-12-16T10:10:02.476+0000] {standard_task_runner.py:105} INFO - Job 87: Subtask check_server_status
+[2024-12-16T10:10:02.514+0000] {task_command.py:467} INFO - Running <TaskInstance: check_server_status.check_server_status scheduled__2024-12-16T10:09:00+00:00 [running]> on host 028a3da4bb90
+[2024-12-16T10:10:02.805+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='check_server_status' AIRFLOW_CTX_TASK_ID='check_server_status' AIRFLOW_CTX_EXECUTION_DATE='2024-12-16T10:09:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-16T10:09:00+00:00'
+[2024-12-16T10:10:02.806+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-12-16T10:10:02.807+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-12-16T10:10:02.807+0000] {logging_mixin.py:190} INFO - Current task name:check_server_status state:running start_date:2024-12-16 10:10:02.447873+00:00
+[2024-12-16T10:10:02.807+0000] {logging_mixin.py:190} INFO - Dag name:check_server_status and current dag run status:running
+[2024-12-16T10:10:02.807+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-16T10:10:02.821+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:10:03.265+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:03.278+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:10:07.650+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:07.664+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:10:08.701+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:08.714+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:10:09.095+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:09.108+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:10:09.469+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:09.488+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:09.805+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:09.836+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:11.101+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:11.130+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:11.458+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:11.488+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:11.812+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:11.842+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:12.181+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:12.212+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:12.535+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:12.565+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:12.898+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:12.930+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:13.230+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:13.262+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:13.602+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:13.608+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:14.669+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:14.682+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:15.047+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:15.057+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:15.431+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:15.444+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:10:15.835+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:19.155+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:10:19.156+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-16T10:10:19.169+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-16T10:10:19.169+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=check_server_status, task_id=check_server_status, run_id=scheduled__2024-12-16T10:09:00+00:00, execution_date=20241216T100900, start_date=20241216T101002, end_date=20241216T101019
+[2024-12-16T10:10:19.183+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-12-16T10:10:19.183+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-12-16T10:10:19.184+0000] {logging_mixin.py:190} INFO - Dag name:check_server_status queued_at:2024-12-16 10:10:00.798317+00:00
+[2024-12-16T10:10:19.184+0000] {logging_mixin.py:190} INFO - Task hostname:028a3da4bb90 operator:PythonOperator
+[2024-12-16T10:10:19.215+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-16T10:10:19.231+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-16T10:10:19.233+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

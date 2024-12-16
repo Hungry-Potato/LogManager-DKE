@@ -1,0 +1,83 @@
+[2024-12-16T10:04:01.888+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-16T10:04:01.902+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: check_server_status.check_server_status scheduled__2024-12-16T10:03:00+00:00 [queued]>
+[2024-12-16T10:04:01.909+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: check_server_status.check_server_status scheduled__2024-12-16T10:03:00+00:00 [queued]>
+[2024-12-16T10:04:01.909+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-16T10:04:01.921+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): check_server_status> on 2024-12-16 10:03:00+00:00
+[2024-12-16T10:04:01.928+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=344) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-12-16T10:04:01.929+0000] {standard_task_runner.py:72} INFO - Started process 346 to run task
+[2024-12-16T10:04:01.930+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'check_server_status', 'check_server_status', 'scheduled__2024-12-16T10:03:00+00:00', '--job-id', '79', '--raw', '--subdir', 'DAGS_FOLDER/check_server_status.py', '--cfg-path', '/tmp/tmpd9jzg4m0']
+[2024-12-16T10:04:01.931+0000] {standard_task_runner.py:105} INFO - Job 79: Subtask check_server_status
+[2024-12-16T10:04:01.968+0000] {task_command.py:467} INFO - Running <TaskInstance: check_server_status.check_server_status scheduled__2024-12-16T10:03:00+00:00 [running]> on host f4f98c9b6a7f
+[2024-12-16T10:04:02.238+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='check_server_status' AIRFLOW_CTX_TASK_ID='check_server_status' AIRFLOW_CTX_EXECUTION_DATE='2024-12-16T10:03:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-16T10:03:00+00:00'
+[2024-12-16T10:04:02.238+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-12-16T10:04:02.238+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-12-16T10:04:02.239+0000] {logging_mixin.py:190} INFO - Current task name:check_server_status state:running start_date:2024-12-16 10:04:01.903264+00:00
+[2024-12-16T10:04:02.239+0000] {logging_mixin.py:190} INFO - Dag name:check_server_status and current dag run status:running
+[2024-12-16T10:04:02.239+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-16T10:04:02.253+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:04:02.362+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:02.727+0000] {logging_mixin.py:190} INFO - Server 3rdLack MN is up
+[2024-12-16T10:04:02.742+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:04:02.884+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:03.279+0000] {logging_mixin.py:190} INFO - Server 3rdLack SN05 is up
+[2024-12-16T10:04:03.294+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:04:03.455+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:03.827+0000] {logging_mixin.py:190} INFO - Server 3rdLack SN06 is up
+[2024-12-16T10:04:03.843+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:04:03.964+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:04.358+0000] {logging_mixin.py:190} INFO - Server 3rdLack SN07 is up
+[2024-12-16T10:04:04.371+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+[2024-12-16T10:04:04.473+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:04.834+0000] {logging_mixin.py:190} INFO - Server 3rdLack SN08 is up
+[2024-12-16T10:04:04.855+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:04.921+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:05.245+0000] {logging_mixin.py:190} INFO - Server 1rdLack MN is up
+[2024-12-16T10:04:05.275+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:05.359+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:06.245+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN01 is up
+[2024-12-16T10:04:06.275+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:06.361+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:07.288+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN02 is up
+[2024-12-16T10:04:07.318+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:07.406+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:08.258+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN03 is up
+[2024-12-16T10:04:08.290+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:08.371+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:09.273+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN04 is up
+[2024-12-16T10:04:09.305+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:09.412+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:10.373+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN05 is up
+[2024-12-16T10:04:10.405+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:10.487+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:11.401+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN06 is up
+[2024-12-16T10:04:11.433+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:11.510+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:12.416+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN07 is up
+[2024-12-16T10:04:12.447+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:12.512+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:13.417+0000] {logging_mixin.py:190} INFO - Server 1rdLack SN09 is up
+[2024-12-16T10:04:13.425+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:13.493+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:13.678+0000] {logging_mixin.py:190} INFO - Server cs1 is up
+[2024-12-16T10:04:13.688+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:13.798+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:13.970+0000] {logging_mixin.py:190} INFO - Server DL01 is up
+[2024-12-16T10:04:13.981+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:14.115+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:14.289+0000] {logging_mixin.py:190} INFO - Server DL02 is up
+[2024-12-16T10:04:14.300+0000] {transport.py:1944} INFO - Connected (version 2.0, client OpenSSH_8.2p1)
+[2024-12-16T10:04:14.406+0000] {transport.py:1944} INFO - Authentication (publickey) successful!
+[2024-12-16T10:04:14.530+0000] {logging_mixin.py:190} INFO - Server DL03 is up
+[2024-12-16T10:04:17.865+0000] {logging_mixin.py:190} INFO - Discord alert sent successfully
+[2024-12-16T10:04:17.867+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-16T10:04:17.885+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-16T10:04:17.886+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=check_server_status, task_id=check_server_status, run_id=scheduled__2024-12-16T10:03:00+00:00, execution_date=20241216T100300, start_date=20241216T100401, end_date=20241216T100417
+[2024-12-16T10:04:17.899+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-12-16T10:04:17.899+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-12-16T10:04:17.899+0000] {logging_mixin.py:190} INFO - Dag name:check_server_status queued_at:2024-12-16 10:04:00.387711+00:00
+[2024-12-16T10:04:17.900+0000] {logging_mixin.py:190} INFO - Task hostname:f4f98c9b6a7f operator:PythonOperator
+[2024-12-16T10:04:17.947+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-16T10:04:17.968+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-16T10:04:17.971+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
