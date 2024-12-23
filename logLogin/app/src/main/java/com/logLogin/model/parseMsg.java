@@ -36,10 +36,7 @@ public class parseMsg {
                 .append("[\\u001B[1;36mSUCCESS\\u001B[0m] '").append("\\u001B[1m")
                 .append(loginId).append("\\u001B[0m' connected from \\u001B[4;34m")
                 .append(sourceIp).append("\\u001B[0m to \\u001B[1m").append(hostname).append("\\u001B[0m(").append(ip).append(").\\n")
-                .append("```");
-
-            return message.toString();
-            
+                .append("```");            
         }
         else{
             message.append("```ansi\\n")
@@ -47,9 +44,8 @@ public class parseMsg {
                 .append(loginId).append("\\u001B[0m' failed to connect from \\u001B[4;34m")
                 .append(sourceIp).append("\\u001B[0m to \\u001B[1m").append(hostname).append("\\u001B[0m(").append(ip).append(").\\n")
                 .append("```");
-
-            return message.toString();
         }
+        return message.toString();
     }
 
 }
