@@ -37,22 +37,8 @@ CONFIG_FILE="/etc/auditbeat/auditbeat.yml"
 # Logstash 출력 설정 추가
 echo "Configuring Auditbeat to send logs to Logstash..."
 
-if ! grep -q "output.logstash:" $CONFIG_FILE; then
-  # Logstash 설정 추가
-  sudo tee -a $CONFIG_FILE > /dev/null <<EOL
-
-# ------------------------------ Logstash Output -------------------------------
-output.logstash:
-  # The Logstash hosts
-  hosts: ["10.11.70.42:5044"]
-
-# ================================= Processors =================================
-EOL
-  echo "Logstash configuration appended to $CONFIG_FILE."
-else
-  echo "Logstash configuration already exists in $CONFIG_FILE."
-fi
-
+wget https://raw.githubusercontent.com/Hungry-Potato/LogManager-DKE/refs/heads/dev-shell/config/auditbeat.yml
+sudo mv ./auditbeat.yml /etc/auditbeat/auditbeat.yml
 
 # Auditd 규칙 파일 경로
 RULES_FILE="/etc/audit/rules.d/audit.rules"
