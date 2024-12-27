@@ -23,8 +23,8 @@ AUDITBEAT_PACKAGE="auditbeat-${AUDITBEAT_VERSION}-amd64.deb"
 if ! dpkg -l | grep -q auditbeat; then
   echo "Installing Auditbeat..."
   curl -L -O https://artifacts.elastic.co/downloads/beats/auditbeat/$AUDITBEAT_PACKAGE
-  sudo dpkg -i $AUDITBEAT_PACKAGE
-  rm -rf $AUDITBEAT_PACKAGE
+  sudo apt install ./$AUDITBEAT_PACKAGE
+  rm -rf ./$AUDITBEAT_PACKAGE
   echo "Auditbeat installation complete."
 else
   echo "Auditbeat is already installed."
@@ -34,9 +34,12 @@ fi
 CONFIG_FILE="/etc/auditbeat/auditbeat.yml"
 
 # Logstash 출력 설정 추가
+# Logstash 출력 설정 추가
 echo "Configuring Auditbeat to send logs to Logstash..."
-sudo tee $CONFIG_FILE > /dev/null <<EOL
-# ============================== Auditbeat Configuration ==============================
+
+if ! grep -q "output.logstash:" $CONFIG_FILE; then
+  # Logstash 설정 추가
+  sudo tee -a $CONFIG_FILE > /dev/null <<EOL
 
 # ------------------------------ Logstash Output -------------------------------
 output.logstash:
@@ -45,6 +48,11 @@ output.logstash:
 
 # ================================= Processors =================================
 EOL
+  echo "Logstash configuration appended to $CONFIG_FILE."
+else
+  echo "Logstash configuration already exists in $CONFIG_FILE."
+fi
+
 
 # Auditd 규칙 파일 경로
 RULES_FILE="/etc/audit/rules.d/audit.rules"
