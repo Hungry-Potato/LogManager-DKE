@@ -11,7 +11,7 @@ echo "Installing Auditd..."
 if ! dpkg -l | grep -q auditd; then
   sudo apt update && sudo apt install -y auditd
   sudo systemctl enable auditd
-  sudo systemctl start auditd
+  sudo systemctl restart auditd
   echo "Auditd installation and configuration complete."
 else
   echo "Auditd is already installed."
@@ -75,7 +75,7 @@ done
 # Auditbeat 서비스 활성화 및 시작
 echo "Enabling and starting Auditbeat service..."
 sudo systemctl enable auditbeat
-sudo systemctl start auditbeat
+sudo systemctl restart auditbeat
 
 # 설정 완료 메시지
 echo "Auditbeat has been successfully configured to send logs to Logstash at 10.11.70.42:5044."
