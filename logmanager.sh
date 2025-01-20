@@ -9,7 +9,7 @@ fi
 # Auditd 설치
 echo "Installing Auditd..."
 if ! dpkg -l | grep -q auditd; then
-  sudo apt update && sudo apt install -y auditd
+  sudo apt update && sudo apt install auditd
   sudo systemctl enable auditd
   sudo systemctl restart auditd
   echo "Auditd installation and configuration complete."
@@ -35,7 +35,7 @@ CONFIG_FILE="/etc/auditbeat/auditbeat.yml"
 
 # Logstash 출력 설정 추가
 # Logstash 출력 설정 추가
-echo "Configuring Auditbeat to send logs to Logstash..."
+echo "Configuring Auditbeat to send logs to Kafka..."
 
 wget https://raw.githubusercontent.com/Hungry-Potato/LogManager-DKE/refs/heads/dev-shell/config/auditbeat.yml
 sudo mv ./auditbeat.yml /etc/auditbeat/auditbeat.yml
@@ -64,9 +64,10 @@ fi
 
 # 규칙 추가
 for RULE in "${RULES[@]}"; do
-  if ! grep -Fxq "$RULE" "$RULES_FILE"; then
+  if ! grep -Fxq -- "$RULE" "$RULES_FILE"; then
     echo "$RULE" | sudo tee -a "$RULES_FILE" > /dev/null
     echo "Added rule: $RULE"
+    sudo augenrules --load
   else
     echo "Rule already exists: $RULE"
   fi
@@ -78,7 +79,7 @@ sudo systemctl enable auditbeat
 sudo systemctl restart auditbeat
 
 # 설정 완료 메시지
-echo "Auditbeat has been successfully configured to send logs to Logstash at 10.11.70.42:5044."
+echo "Auditbeat has been successfully configured to send logs to Kafka at 10.11.70.51:19092."
 echo "Use the following command to check its status:"
 echo "  sudo systemctl status auditbeat"
 
