@@ -2,8 +2,15 @@
 # For more information on multiple pipelines, see the documentation:
 #   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
 
-- pipeline.id: main
-  path.config: "/etc/logstash/conf.d/main-pipeline.conf"
+
+- pipeline.id: main-kafka
+  path.config: "/etc/logstash/conf.d/main-kafka-pipeline.conf"
+
+- pipeline.id: audit-login-pipeline-kafka
+  path.config: "/etc/logstash/conf.d/audit-login-pipeline-kafka.conf"
+
+- pipeline.id: audit-sudo-pipeline-kafka
+  path.config: "/etc/logstash/conf.d/audit-sudo-pipeline-kafka.conf"
 
 - pipeline.id: metric-pipeline
   path.config: "/etc/logstash/conf.d/metric-pipeline.conf"
@@ -11,15 +18,20 @@
 - pipeline.id: file-pipeline
   path.config: "/etc/logstash/conf.d/file-pipeline.conf"
 
-- pipeline.id: sudo-pipeline
-  path.config: "/etc/logstash/conf.d/sudo-pipeline.conf"
-
-- pipeline.id: audit-sudo-pipeline
-  path.config: "/etc/logstash/conf.d/audit-sudo-pipeline.conf"
-
-- pipeline.id: audit-login-pipeline
-  path.config: "/etc/logstash/conf.d/audit-login-pipeline.conf"
-
 #폐기
+#- pipeline.id: main
+#  path.config: "/etc/logstash/conf.d/main-pipeline.conf"
+
+#- pipeline.id: sudo-pipeline
+#  path.config: "/etc/logstash/conf.d/sudo-pipeline.conf"
+
+
+#- pipeline.id: audit-sudo-pipeline
+#  path.config: "/etc/logstash/conf.d/audit-sudo-pipeline.conf"
+
+#- pipeline.id: audit-login-pipeline
+#  path.config: "/etc/logstash/conf.d/audit-login-pipeline.conf"
+
+
 #- pipeline.id: login-pipeline
 #  path.config: "/etc/logstash/conf.d/login-pipeline.conf"
