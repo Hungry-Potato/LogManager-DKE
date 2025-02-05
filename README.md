@@ -18,7 +18,11 @@ DKE 통합 Log 관리 시스템
 
 
 # Overall Architecture
-![image](https://github.com/user-attachments/assets/0e704918-b3c1-4810-8abb-a536a60d079c)
+![image](https://github.com/user-attachments/assets/ce08c24c-fd2a-40e3-ab77-7c1075f2b6ea)
+
+
+
+
 
 
 
